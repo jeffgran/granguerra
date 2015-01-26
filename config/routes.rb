@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :rsvps, path: 'rsvp' do
     collection do
       get :thank_you
+      get :coming_soon
     end
   end
 
