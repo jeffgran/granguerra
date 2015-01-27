@@ -1,0 +1,7 @@
+bluehost:
+  domain: jeffgran@practice-love.com
+  deploy_to: '/home1/jeffgran/rails_apps/granguerra'
+  repository: 'https://github.com/jeffgran/granguerra.git'
+  branch: 'master'
+  rake_env:
+    RAILS_ENV: 'production'
