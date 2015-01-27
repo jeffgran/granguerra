@@ -3,5 +3,6 @@ bluehost:
   deploy_to: '/home1/jeffgran/rails_apps/granguerra'
   repository: 'https://github.com/jeffgran/granguerra.git'
   branch: 'master'
+  post_deploy_script: 'bin/bundle'
   rake_env:
     RAILS_ENV: 'production'
