@@ -15,5 +15,5 @@ namespace :deploy do
     `#{cmd}`
   end
 
-  task :post_deploy => ['assets:precompile', :restart_phusion]
+  task :post_deploy => ['assets:precompile', :fix_config, :restart_phusion]
 end
