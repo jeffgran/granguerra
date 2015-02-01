@@ -23,22 +23,39 @@
 // you may use and inherit here
 //
 // If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+// See http://getbootstrap.com/customize/#typography
 //
 // Example:
 // @link-color: #ff0000;
 
 //@body-bg: @gray-dark;
-@body-bg: #773339;
-@text-color: @gray-lighter;
+@granguerra-red: #773339;
+@granguerra-white: lighten(#faebd7, 2);
+@body-bg: @granguerra-red;
+@text-color: @granguerra-white;
 
 
 @navbar-default-bg: @body-bg;
-@navbar-default-link-color: @gray-lighter;
-@navbar-default-link-active-color: white;
+@navbar-default-link-color: @granguerra-white;
+@navbar-default-link-active-color: @granguerra-white;
 @navbar-default-link-hover-color: @navbar-default-link-active-color;
 @navbar-default-link-hover-bg: darken(@navbar-default-bg, 10);
 // @navbar-default-link-active-bg
 
+@font-size-base: 16px;
+// @headings-font-weight: 400;
+@font-size-h1: floor((@font-size-base * 5));
 
 @font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+.main-content {
+    color: @granguerra-red;
+    background-color: @granguerra-white;
+    font-family: 'Pinyon Script', cursive;
+    padding: 100px 0;
+}
+
+.center {
+    text-align: center;
+}
