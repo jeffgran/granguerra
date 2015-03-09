@@ -14,8 +14,12 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   resources :rsvps, path: 'rsvp' do
-    collection do
+    
+    member do
       get :thank_you
+    end
+
+    collection do
       get :coming_soon
     end
   end

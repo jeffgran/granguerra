@@ -22,22 +22,21 @@ html
     meta name="msapplication-TileColor" content="#da532c"
     meta name="msapplication-TileImage" content="/mstile-144x144.png"
     meta name="theme-color" content="#ffffff"
-    link href="http://fonts.googleapis.com/css?family=Pinyon+Script" rel="stylesheet" type="text/css"
+    link href="http://fonts.googleapis.com/css?family=Great+Vibes" rel="stylesheet" type="text/css"
+  body
 
-body
+    nav.navbar.navbar-default
+      .container
+        .navbar-header
+          a.navbar-brand href="/" Gran + Guerra Wedding Reception
+        #navbar.collapse.navbar-collapse
+          ul#menu.nav.navbar-nav
+            li class="#{'active' if current_page?(controller: :application, action: :where)}"
+              a href="/where" Where
+            li class="#{'active' if current_page?(controller: :application, action: :when)}"
+              a href="/when" When
+            li class="#{'active' if current_page?(controller: :rsvps)}"
+              a href="/rsvp" RSVP
 
-  nav.navbar.navbar-default
-    .container
-      .navbar-header
-        a.navbar-brand href="/" Gran + Guerra Wedding Reception
-      #navbar.collapse.navbar-collapse
-        ul#menu.nav.navbar-nav
-          li class="#{'active' if current_page?(controller: :application, action: :where)}"
-            a href="/where" Where
-          li class="#{'active' if current_page?(controller: :application, action: :when)}"
-            a href="/when" When
-          li class="#{'active' if current_page?(controller: :rsvps)}"
-            a href="/rsvp" RSVP
-
-  .container.main-content
-    = yield
+    .container.main-content
+      = yield

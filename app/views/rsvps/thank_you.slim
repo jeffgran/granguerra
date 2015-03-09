@@ -1,1 +1,14 @@
-h1 Thank You!
+.center
+  h1 Thank you for responding
+
+  - if @rsvp.coming?
+    h3 We're glad you can make it. Can't wait to see you there!
+  - else
+    h3 Sorry to hear you can't make it. You'll be there in spirit.
+
+  hr
+  hr
+  hr
+
+  .sans
+    p P.S. If you change your mind about anything, you can come back and RSVP again with the same email address, and we'll update your RSVP.

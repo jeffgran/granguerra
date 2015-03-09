@@ -29,8 +29,8 @@
 // @link-color: #ff0000;
 
 //@body-bg: @gray-dark;
-@granguerra-red: #773339;
-@granguerra-white: lighten(#faebd7, 2);
+@granguerra-red: #520807;
+@granguerra-white: lighten(#faebd7, 3);
 @body-bg: @granguerra-red;
 @text-color: @granguerra-white;
 
@@ -49,13 +49,39 @@
 @font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 
+body {
+    background-image: url('Red-Background-Layout-Free-Download.jpg');
+    background-repeat: no-repeat;
+    background-color: #420001;
+}
+
 .main-content {
     color: @granguerra-red;
     background-color: @granguerra-white;
-    font-family: 'Pinyon Script', cursive;
+    font-family: 'Greate Vibes', cursive;
     padding: 100px 0;
+    // background-color: transparent;
+    // background-image: url('parchment_tile.png');
+    // background-size-x: 100%;
+    // background-repeat: repeat-y;
 }
 
 .center {
     text-align: center;
+}
+
+form {
+    font-family: @font-family-sans-serif;
+}
+
+.error_messages {
+    border: 1px solid @granguerra-red;
+    padding: 5px;
+    background-color: lighten(@granguerra-red, 55);
+    border-radius: 5px;
+    font-family: @font-family-sans-serif;
+}
+
+.sans {
+    font-family: @font-family-sans-serif;
 }

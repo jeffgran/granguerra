@@ -1,0 +1,64 @@
+.center
+  h1 Répondez, s’il vous plaît
+
+hr
+
+
+- if @rsvp.errors.any?
+  - ap @rsvp.errors
+  .col-sm-4
+  .error_messages.col-sm-4
+    h5 Wait, there was a problem saving your RSVP...
+    ul
+      - @rsvp.errors.full_messages.each do |msg|
+        li
+          = msg
+  .clearfix
+  hr
+
+= form_for @rsvp, html: {class: "form-horizontal"} do |f|
+  .form-group
+    = f.label :first_name, class: 'col-sm-4 control-label'
+      | First Name:
+    .col-sm-4
+      = f.text_field :first_name, class: 'form-control'
+
+  .form-group
+    = f.label :last_name, class: 'col-sm-4 control-label'
+      | Last Name:
+    .col-sm-4
+      = f.text_field :last_name, class: 'form-control'
+
+  .form-group
+    = f.label :email, class: 'col-sm-4 control-label'
+      | Email Address:
+    .col-sm-4
+      = f.text_field :email, class: 'form-control'
+
+  .form-group
+    label.col-sm-4.control-label
+      | Can you make it?
+    .col-sm-6
+      = f.label :coming, :yes, class: 'radio-inline'
+        = f.radio_button :coming, true
+        | Yes
+      = f.label :coming, :no, class: 'radio-inline'
+        = f.radio_button :coming, false
+        | No
+
+  .form-group
+    = f.label :party_size, class: 'col-sm-4 control-label'
+      | How many in your party?
+    .col-sm-4
+      = f.select :party_size, options_for_select(1.upto(10).to_a), {}, {class: 'form-control'}
+
+  .form-group
+    label.col-sm-4.control-label
+      | Help prevent spam:
+    .col-sm-4
+      = recaptcha_tags
+
+  .form-group
+    .col-sm-4
+    .col-sm-4
+      button.btn.btn-lg.btn-primary type="submit" Respond
