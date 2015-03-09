@@ -1,8 +1,9 @@
 class RsvpsController < ApplicationController
 
   def index
-    @rsvp = Rsvp.new
-    render action: :new
+    #@rsvp = Rsvp.new
+    #render action: :new
+    render 'coming_soon'
   end
 
   def new
