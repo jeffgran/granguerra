@@ -1,17 +1,40 @@
 class RsvpsController < ApplicationController
+  DISABLED=false
+
+  def list
+    if ApplicationHelper.verify_admin_password(params[:password])
+      render :list
+    else
+      raise ActiveRecord::RecordNotFound
+    end
+  end
 
   def index
-    #@rsvp = Rsvp.new
-    #render action: :new
-    render 'coming_soon'
+    if DISABLED
+      render template: 'shared/coming_soon'
+    else
+      @rsvp = Rsvp.new
+      render action: :new
+    end
   end
 
   def new
     
   end
 
+  # "rsvp" => {
+  #   "first_name"=>"Jeff",
+  #   "last_name"=>"Gran",
+  #   "email"=>"jeff.gran@gmail.com",
+  #   "coming"=>"true",
+  #   "party_size"=>"1",
+  #   "guests"=>[
+  #     {"name"=>"Jeff", "meal"=>"steak"}
+  #   ]
+  # }
   def create
-    @rsvp = Rsvp.new(rsvp_params)
+    @rsvp = Rsvp.find_by_email(rsvp_params[:email]) || Rsvp.new
+    @rsvp.attributes = rsvp_params
     rsvp_valid = @rsvp.valid?
     robot_test = verify_recaptcha(:model => @rsvp, :message => "Are you sure you're a robot?")
     if robot_test && rsvp_valid && @rsvp.save
@@ -20,6 +43,7 @@ class RsvpsController < ApplicationController
       render :new
     end
   end
+  alias update create
 
   def thank_you
     @rsvp = Rsvp.find(params.require(:id))
@@ -28,7 +52,7 @@ class RsvpsController < ApplicationController
   private
 
   def rsvp_params
-    params.require(:rsvp).permit([:first_name, :last_name, :email, :party_size, :coming])
+    params.require(:rsvp).permit([:first_name, :last_name, :email, :party_size, :coming, {guests_attributes: [:name, :meal]}])
   end
 
   def recaptcha_params

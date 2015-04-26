@@ -48,9 +48,12 @@
 
 @font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
+html {
+    position: relative;
+}
 
 body {
-    background-image: url('Red-Background-Layout-Free-Download.jpg');
+    background-image: image-url('Red-Background-Layout-Free-Download.jpg');
     background-repeat: no-repeat;
     background-color: #420001;
 }
@@ -70,6 +73,15 @@ body {
     text-align: center;
 }
 
+#footer {
+    background: image-url('pattern8-pattern53b.png') repeat;
+    min-height: 100px;
+    color: #666666;
+    p {
+        margin-top: 40px;
+    }
+}
+
 form {
     font-family: @font-family-sans-serif;
 }
@@ -83,5 +95,9 @@ form {
 }
 
 .sans {
+    font-family: @font-family-sans-serif;
+}
+
+#galleries {
     font-family: @font-family-sans-serif;
 }

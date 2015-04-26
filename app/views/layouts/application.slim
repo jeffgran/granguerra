@@ -37,6 +37,12 @@ html
               a href="/when" When
             li class="#{'active' if current_page?(controller: :rsvps)}"
               a href="/rsvp" RSVP
+            li class="#{'active' if current_page?(controller: :photos)}"
+              a href="/photos" Photos
 
     .container.main-content
       = yield
+
+    #footer.container.footer
+      .center
+        p Site code and design by Jeff Gran

@@ -25,6 +25,8 @@ en:
       rsvp:
         coming: "We need to know"
         email: "Email Address"
+      guest:
+        meal: "dinner selection"
     errors:
       models:
         rsvp:

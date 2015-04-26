@@ -22,5 +22,15 @@ module Granguerra
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    SALT = "bBeslpbsZLICoBRtRyYCorPQYs0p399uiJzUj4bRbfWEKZpZ03Vg2veHWw5TuckawcS5ym3HY9hRSf3AxYkgWQ"
+    CRYPTED_PASSWORD = "$2a$10$/J3xY.dxxBCPdlSgH6sSX.sdtqPgE1yPOkQV8Iwgq98Wgqwh6266i"
+
+    # [JG] to generate a new password:
+    # rails c
+    # irb(main):001:0> BCrypt::Password.create("mypassword"+Granguerra::Application::SALT)
+    # => "$2a$10$/J3xY.dxxBCPdlSgH6sSX.sdtqPgE1yPOkQV8Iwgq98Wgqwh6266i"
+    # 
+    # then copy/paste that string above to be the new CRYPTED_PASSWORD.
   end
 end

@@ -13,5 +13,4 @@ class ApplicationController < ActionController::Base
   def when
   end
 
-
 end

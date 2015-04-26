@@ -11,24 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150208215151) do
+ActiveRecord::Schema.define(version: 20150425192605) do
 
-  create_table "people", force: :cascade do |t|
-    t.string   "first_name", limit: 255
-    t.string   "last_name",  limit: 255
-    t.string   "email",      limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "guests", force: :cascade do |t|
+    t.integer "rsvp_id"
+    t.string  "name"
+    t.string  "meal"
   end
 
   create_table "rsvps", force: :cascade do |t|
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "first_name", limit: 255
-    t.string   "last_name",  limit: 255
-    t.string   "email",      limit: 255
-    t.boolean  "coming",     limit: 1
-    t.integer  "party_size", limit: 4
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.boolean  "coming"
+    t.integer  "party_size"
+    t.text     "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

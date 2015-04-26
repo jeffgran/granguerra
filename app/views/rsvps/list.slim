@@ -1,0 +1,3 @@
+- Rsvp.all.each do |rsvp|
+  pre
+    = JSON.pretty_generate JSON.parse(rsvp.to_json(include: :guests))

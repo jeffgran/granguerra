@@ -12,5 +12,6 @@
  *
  *= require bootstrap_and_overrides
  *= require_tree .
+ *= require manifest
  *= require_self
  */
