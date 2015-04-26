@@ -1,5 +1,5 @@
 class RsvpsController < ApplicationController
-  DISABLED=false
+  DISABLED=true
 
   def list
     if ApplicationHelper.verify_admin_password(params[:password])
