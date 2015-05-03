@@ -7,11 +7,6 @@ class Rsvp < ActiveRecord::Base
   has_many :guests, validate: false, dependent: :destroy
   accepts_nested_attributes_for :guests
 
-  validate :number_of_guests_matches_party_size
-  def number_of_guests_matches_party_size
-    errors.add(:guests, "missing") unless guests.size == party_size.to_i
-  end
-
   validate :guests_are_valid
   def guests_are_valid
     guests.each.with_index do |guest, i|
@@ -29,6 +24,13 @@ class Rsvp < ActiveRecord::Base
   def destroy_guests
     guests.each do |g|
       g.destroy unless g.new_record?
+    end
+  end
+
+  before_validation :reset_party_size, on: :update
+  def reset_party_size
+    if coming == false
+      self.party_size = 0
     end
   end
   

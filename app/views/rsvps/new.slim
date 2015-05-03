@@ -42,6 +42,13 @@ hr
 
   .form-group
     .col-sm-2
+    = f.label :comment, class: 'col-sm-2 control-label'
+      | Message (optional):
+    .col-sm-4
+      = f.text_area :comment, class: 'form-control', required: false
+
+  .form-group
+    .col-sm-2
     label.col-sm-2.control-label
       | Help prevent spam:
     .col-sm-4

@@ -90,9 +90,10 @@ GuestSection = React.createClass
   render: ->
     options = _.map [
       ["", "Choose..."],
-      ['steak', 'Steak - Filet Mignon with garlic mashed potatoes'],
-      ['salmon', 'Salmon - Pistashio-encrusted salmon with ??'],
-      ['vegetarian', 'Vegetarian - Mushroom ravioli']
+      ['steak', 'Steak - Grilled Filet of Beef with a Green Peppercorn Cognac Sauce and Mashed Potatoes'],
+      ['salmon', 'Salmon - Pistashio Crusted Fillet on a bed of Baby Spinach'],
+      ['vegetarian', 'Vegetarian - Portobello Ravioli with a Chardonnay Butter Sauce']
+      ['child', 'Children\'s - Fried Chicken Tenders']
       ], (choiceArr, i) ->
       choiceValue = choiceArr[0]
       choiceName = choiceArr[1]

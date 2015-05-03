@@ -24,7 +24,7 @@ module Granguerra
     config.active_record.raise_in_transactional_callbacks = true
 
     SALT = "bBeslpbsZLICoBRtRyYCorPQYs0p399uiJzUj4bRbfWEKZpZ03Vg2veHWw5TuckawcS5ym3HY9hRSf3AxYkgWQ"
-    CRYPTED_PASSWORD = "$2a$10$/J3xY.dxxBCPdlSgH6sSX.sdtqPgE1yPOkQV8Iwgq98Wgqwh6266i"
+    CRYPTED_PASSWORD = "$2a$10$nSHSJ6rWYygV8of.Xr3CsO6iQ2hW92EwuKHUzqW0k1NoGkBLd.Jhu"
 
     # [JG] to generate a new password:
     # rails c
