@@ -119,6 +119,7 @@ GuestSection = React.createClass
   
 $ ->
   sect = $('#partySection')
-  sect_dom = sect[0]
-  React.render `<PartySection serverdata={sect.data('serverdata')} />`, sect_dom
+  if sect.length > 0
+    sect_dom = sect[0]
+    React.render `<PartySection serverdata={sect.data('serverdata')} />`, sect_dom
 
