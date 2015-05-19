@@ -45,8 +45,9 @@ html
             li class="#{'active' if current_page?(controller: :photos)}"
               a href="/photos" Photos
 
-    .container.main-content
-      = yield
+    .main-content.container
+      .container
+        = yield
 
     #footer.container.footer
       .center

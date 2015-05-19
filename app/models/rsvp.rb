@@ -7,6 +7,8 @@ class Rsvp < ActiveRecord::Base
   has_many :guests, validate: false, dependent: :destroy
   accepts_nested_attributes_for :guests
 
+  scope :no, -> { where(coming: false) }
+
   validate :guests_are_valid
   def guests_are_valid
     guests.each.with_index do |guest, i|
@@ -33,5 +35,9 @@ class Rsvp < ActiveRecord::Base
       self.party_size = 0
     end
   end
-  
+
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

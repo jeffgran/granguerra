@@ -1,3 +1,52 @@
-- Rsvp.all.each do |rsvp|
-  pre
-    = JSON.pretty_generate JSON.parse(rsvp.to_json(include: :guests))
+.sans
+  .alert.alert-success
+    | Total 
+    strong Yes 
+    | RSVPs (number of guests) : 
+    strong = Guest.yes.count.to_s
+
+  .alert.alert-danger
+    | Total 
+    strong No 
+    | RSVPs (number of rsvps) : 
+    strong = Rsvp.no.count
+
+
+  h3 All RSVPs
+
+  .white
+    table.table.table-bordered
+      thead
+        tr
+          th #
+          th Name
+          th Coming?
+          th Comment
+      tbody
+        - Rsvp.all.each do |r|
+          tr
+            td = r.id.to_s
+            td = r.full_name.to_s
+            td = r.coming ? "Yes" : "No"
+            td = r.comment.to_s
+
+
+
+  h3 Yes Guest List
+
+  .white
+    table.table.table-bordered
+      thead
+        tr
+          th #
+          th Name
+          th Meal
+      tbody
+        - Guest.yes.each do |g|
+          tr
+            td = g.id.to_s
+            td = g.name.to_s
+            td = g.meal.to_s
+
+    
+
