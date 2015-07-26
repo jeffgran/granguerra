@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-  DISABLED=true
+  DISABLED=false
 
   def index
     if DISABLED

@@ -5,4 +5,8 @@ $ ->
   $("#galleries").nanoGallery
     kind: 'flickr'
     userID: '33995200@N00'
-    albumList: '72157629558115122|72157624405194867'  
+    #albumList: '72157654055037724'
+    photoset: '72157654055037724'
+    #openOnStart: '72157654055037724'
+    displayBreadcrumb: false
+    thumbnailLabel: { hideIcons:true, display: false }

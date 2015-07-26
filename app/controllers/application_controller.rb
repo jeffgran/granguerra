@@ -13,4 +13,7 @@ class ApplicationController < ActionController::Base
   def when
   end
 
+  def gifts
+  end
+
 end

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   get "/when" => 'application#when'
   get "/where" => 'application#where'
+  get "/gifts" => 'application#gifts'
 
   resources :rsvps, only: [:new, :create, :index, :update], path: 'rsvp' do
     member do
