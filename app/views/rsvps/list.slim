@@ -23,7 +23,7 @@
           th Coming?
           th Comment
       tbody
-        - Rsvp.all.each do |r|
+        - Rsvp.all.order("created_at desc").each do |r|
           tr
             td = r.id.to_s
             td = r.full_name.to_s
@@ -42,7 +42,7 @@
           th Name
           th Meal
       tbody
-        - Guest.yes.each do |g|
+        - Guest.yes.order("created_at desc").each do |g|
           tr
             td = g.id.to_s
             td = g.name.to_s
