@@ -1,5 +1,5 @@
 class RsvpsController < ApplicationController
-  DISABLED=false
+  DISABLED=true
 
   def list
     if ApplicationHelper.verify_admin_password(params[:password])
@@ -11,7 +11,7 @@ class RsvpsController < ApplicationController
 
   def index
     if DISABLED
-      render template: 'shared/coming_soon'
+      render template: 'rsvps/closed'
     else
       @rsvp = Rsvp.new
       render action: :new
